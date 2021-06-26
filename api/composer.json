@@ -1,0 +1,12 @@
+{
+    "require": {
+        "amphp/http-server": "^2.1",
+        "amphp/http-server-router": "^1.0",
+        "amphp/log": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "enaza\\": "src/"
+        }
+    }
+}

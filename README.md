@@ -9,13 +9,13 @@
 ### API
 
     git pull git@github.com:golovanovya/bar.git
-    cd api
-    composer install
+    cd api && composer install
 
 ### Front
 
-    cd front
-    php -S localhost:3000
+    cd front && cp config.example.js config.js
+
+Запустить docker-composer up
 
 ## TODO
 

@@ -4,19 +4,18 @@ namespace enaza;
 
 class Pub
 {
-    private $genreFactory;
-    private $visitorNames = ["Вася", "Петя", "Лёша", "Саша"];
-    private $visitors;
-    private $genre;
-    private $danceFloor = [];
-    private $bar = [];
+    public const VISITOR_NAMES = ["Вася", "Петя", "Лёша", "Саша"];
+    private array $visitors;
+    private Genre $genre;
+    private array $danceFloor = [];
+    private array $bar = [];
 
-    public function __construct(GenreFactory $genreFactory)
+    public function __construct(private GenreFactory $genreFactory)
     {
         $this->genreFactory = $genreFactory;
         $this->visitors = array_map(function ($name) {
             return new Visitor($name, $this->genreFactory->getRandomGenre());
-        }, $this->visitorNames);
+        }, self::VISITOR_NAMES);
         $this->changeGenre();
     }
 

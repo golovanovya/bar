@@ -4,13 +4,10 @@ namespace enaza;
 
 class Visitor
 {
-    private $name;
-    private $genre;
-
-    public function __construct(string $name, Genre $genre)
-    {
-        $this->name = $name;
-        $this->genre = $genre;
+    public function __construct(
+        private string $name,
+        private Genre $genre
+    ) {
     }
 
     public function getName(): string

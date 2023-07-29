@@ -4,17 +4,27 @@ namespace enaza;
 
 class GenreFactory
 {
-    private $genreNames = ["Рок", "Хип-хоп", "Фолк", "Рейв", "Кантри", "Шансон", "Джаз", "Электронная музыка", "Поп-музыка"];
+    public const GENRE_NAMES = [
+        "Рок",
+        "Хип-хоп",
+        "Фолк",
+        "Рейв",
+        "Кантри",
+        "Шансон",
+        "Джаз",
+        "Электронная музыка",
+        "Поп-музыка",
+    ];
 
-    public function getGenreList()
+    public function getGenreList(): array
     {
         return array_map(function ($genreName) {
             return new Genre($genreName);
-        }, $this->genreNames);
+        }, self::GENRE_NAMES);
     }
 
     public function getRandomGenre(): Genre
     {
-        return new Genre($this->genreNames[array_rand($this->genreNames, 1)]);
+        return new Genre(self::GENRE_NAMES[array_rand(self::GENRE_NAMES, 1)]);
     }
 }

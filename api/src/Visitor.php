@@ -6,7 +6,7 @@ class Visitor
 {
     public function __construct(
         private string $name,
-        private Genre $genre
+        private Genre $genre,
     ) {
     }
 

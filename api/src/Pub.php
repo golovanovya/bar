@@ -2,6 +2,8 @@
 
 namespace enaza;
 
+use League\Event\EventDispatcher;
+
 class Pub
 {
     public const VISITOR_NAMES = ["Вася", "Петя", "Лёша", "Саша"];
@@ -10,9 +12,10 @@ class Pub
     private array $danceFloor = [];
     private array $bar = [];
 
-    public function __construct(private GenreFactory $genreFactory)
-    {
-        $this->genreFactory = $genreFactory;
+    public function __construct(
+        private GenreFactory $genreFactory,
+        private EventDispatcher $dispatcher,
+    ) {
         $this->visitors = array_map(function ($name) {
             return new Visitor($name, $this->genreFactory->getRandomGenre());
         }, self::VISITOR_NAMES);
@@ -27,17 +30,15 @@ class Pub
     public function changeGenre()
     {
         $this->genre = $this->genreFactory->getRandomGenre();
-        $this->onChangeGenre();
-    }
 
-    private function onChangeGenre()
-    {
         $this->danceFloor = array_values(array_filter($this->visitors, function (Visitor $visitor) {
             return $visitor->getGenre()->isEqual($this->getCurrentGenre());
         }));
         $this->bar = array_values(array_filter($this->visitors, function (Visitor $visitor) {
             return !$visitor->getGenre()->isEqual($this->getCurrentGenre());
         }));
+
+        $this->dispatcher->dispatch(new GenreChanged($this->genre));
     }
 
     public function getDanceFloorVisitors()

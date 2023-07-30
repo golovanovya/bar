@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebb7bf0f61cff8180fa03f4f1bd4e2b2",
+    "content-hash": "4985f19b9dea48beb5b4d724f9831dd5",
     "packages": [
         {
             "name": "amphp/amp",
@@ -930,6 +930,162 @@
             "time": "2020-05-07T18:57:50+00:00"
         },
         {
+            "name": "amphp/websocket",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amphp/websocket.git",
+                "reference": "248e9dc1be0477932cd1788e5002b0aabf66f179"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amphp/websocket/zipball/248e9dc1be0477932cd1788e5002b0aabf66f179",
+                "reference": "248e9dc1be0477932cd1788e5002b0aabf66f179",
+                "shasum": ""
+            },
+            "require": {
+                "amphp/amp": "^2.2",
+                "amphp/byte-stream": "^1.6.1",
+                "amphp/socket": "^1",
+                "cash/lrucache": "^1",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "amphp/php-cs-fixer-config": "dev-master",
+                "amphp/phpunit-util": "^1.1.2",
+                "phpunit/phpunit": "^8 || ^7",
+                "vimeo/psalm": "^3.11@dev"
+            },
+            "suggest": {
+                "ext-zlib": "Required for compression"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Amp\\Websocket\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Piotrowski",
+                    "email": "aaron@trowski.com"
+                },
+                {
+                    "name": "Niklas Keller",
+                    "email": "me@kelunik.com"
+                },
+                {
+                    "name": "Bob Weinand",
+                    "email": "bobwei9@hotmail.com"
+                }
+            ],
+            "description": "Shared code for websocket servers and clients.",
+            "homepage": "https://github.com/amphp/websocket",
+            "keywords": [
+                "amp",
+                "amphp",
+                "async",
+                "http",
+                "non-blocking",
+                "websocket"
+            ],
+            "support": {
+                "issues": "https://github.com/amphp/websocket/issues",
+                "source": "https://github.com/amphp/websocket/tree/v1.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/amphp",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-04-11T23:45:31+00:00"
+        },
+        {
+            "name": "amphp/websocket-server",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amphp/websocket-server.git",
+                "reference": "5cb850e9681a9e551635b946fdb1fa2372a8abe8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amphp/websocket-server/zipball/5cb850e9681a9e551635b946fdb1fa2372a8abe8",
+                "reference": "5cb850e9681a9e551635b946fdb1fa2372a8abe8",
+                "shasum": ""
+            },
+            "require": {
+                "amphp/amp": "^2.2",
+                "amphp/byte-stream": "^1.6.1",
+                "amphp/http": "^1.3",
+                "amphp/http-server": "^2",
+                "amphp/socket": "^1",
+                "amphp/websocket": "^1",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "amphp/http-client": "^4",
+                "amphp/http-server-router": "^1.0.2",
+                "amphp/http-server-static-content": "^1.0.4",
+                "amphp/log": "^1",
+                "amphp/php-cs-fixer-config": "dev-master",
+                "amphp/phpunit-util": "^1.3",
+                "league/climate": "^3",
+                "phpunit/phpunit": "^9 || ^8 || ^7",
+                "vimeo/psalm": "^3.11@dev"
+            },
+            "suggest": {
+                "ext-zlib": "Required for compression"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Amp\\Websocket\\Server\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Lowrey",
+                    "email": "rdlowrey@php.net"
+                },
+                {
+                    "name": "Bob Weinand"
+                },
+                {
+                    "name": "Niklas Keller",
+                    "email": "me@kelunik.com"
+                },
+                {
+                    "name": "Aaron Piotrowski",
+                    "email": "aaron@trowski.com"
+                }
+            ],
+            "description": "Websocket server for Amp's HTTP server.",
+            "homepage": "https://github.com/amphp/websocket-server",
+            "keywords": [
+                "http",
+                "server",
+                "websocket"
+            ],
+            "support": {
+                "issues": "https://github.com/amphp/websocket-server/issues",
+                "source": "https://github.com/amphp/websocket-server/tree/v2.0.0"
+            },
+            "time": "2020-07-01T17:08:20+00:00"
+        },
+        {
             "name": "amphp/windows-registry",
             "version": "v0.3.3",
             "source": {
@@ -1105,6 +1261,65 @@
                 "x509"
             ],
             "time": "2019-05-29T19:02:31+00:00"
+        },
+        {
+            "name": "league/event",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/event.git",
+                "reference": "221867a61087ee265ca07bd39aa757879afca820"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/event/zipball/221867a61087ee265ca07bd39aa757879afca820",
+                "reference": "221867a61087ee265ca07bd39aa757879afca820",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "psr/event-dispatcher": "^1.0"
+            },
+            "provide": {
+                "psr/event-dispatcher-implementation": "1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpstan/phpstan": "^0.12.45",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Event\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Event package",
+            "keywords": [
+                "emitter",
+                "event",
+                "listener"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/event/issues",
+                "source": "https://github.com/thephpleague/event/tree/3.0.2"
+            },
+            "time": "2022-10-29T09:31:25+00:00"
         },
         {
             "name": "league/uri",
@@ -1462,6 +1677,56 @@
             "time": "2018-02-13T20:26:39+00:00"
         },
         {
+            "name": "psr/event-dispatcher",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/event-dispatcher.git",
+                "reference": "dbefd12671e8a14ec7f180cab83036ed26714bb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/event-dispatcher/zipball/dbefd12671e8a14ec7f180cab83036ed26714bb0",
+                "reference": "dbefd12671e8a14ec7f180cab83036ed26714bb0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\EventDispatcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Standard interfaces for event handling.",
+            "keywords": [
+                "events",
+                "psr",
+                "psr-14"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/event-dispatcher/issues",
+                "source": "https://github.com/php-fig/event-dispatcher/tree/1.0.0"
+            },
+            "time": "2019-01-08T18:20:26+00:00"
+        },
+        {
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1567,5 +1832,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.3.0"
 }
